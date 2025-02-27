@@ -8,8 +8,14 @@ export default defineNuxtConfig({
   $development: {
     routeRules: {
       '/api/**': {
-        proxy: 'http://localhost:5096/**',
+        proxy: 'https://localhost:7238/**',
       }
     },
+    devServer: {
+      https: {
+        key: 'dev-cert.key',
+        cert: 'dev-cert.pem'
+      }
+    }
   },
 })

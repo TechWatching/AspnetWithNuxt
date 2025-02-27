@@ -12,6 +12,20 @@ This [blog article](https://techwatching.dev/posts/aspnetcore-with-nuxt) explain
 
 ## Run the application
 
+Before running the application, make sure to have configured `HTTPS` as explained [in this article](https://techwatching.dev/posts/aspnetcore-with-nuxt-https):
+1. Create an `.env` file with the following content:
+```text
+NODE_TLS_REJECT_UNAUTHORIZED=0
+```
+2. Generate and trust the ASP.NET Core HTTPS Development certificate:
+```bash
+dotnet dev-certs https --trust
+```
+3. Create the certificate and private key files for the Nuxt front end:
+```bash
+dotnet dev-certs https --export-path ./WebApp/dev-cert.pem --format PEM -np
+```
+
 To run the application, you need to start both the API and the front
 
 ```powershell
