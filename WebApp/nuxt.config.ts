@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   $development: {
     routeRules: {
       '/api/**': {
-        proxy: 'https://localhost:7238/**',
+        proxy: `${import.meta.env.services__WebApi__https__0}/**`,
       }
     },
     devServer: {
