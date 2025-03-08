@@ -18,4 +18,12 @@ export default defineNuxtConfig({
       }
     }
   },
+  runtimeConfig: {
+    public: {
+      otelExporterOtlpEndpoint: '',
+      otelExporterOtlpHeaders: '',
+      otelResourceAttributes: '',
+      otelServiceName: '',
+    }
+  }
 })
