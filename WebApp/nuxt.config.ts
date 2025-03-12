@@ -13,8 +13,8 @@ export default defineNuxtConfig({
     },
     devServer: {
       https: {
-        key: 'dev-cert.key',
-        cert: 'dev-cert.pem'
+        key: import.meta.env.CERT_KEY_PATH ?? 'dev-cert.key',
+        cert: import.meta.env.CERT_PATH ?? 'dev-cert.pem'
       }
     }
   },
